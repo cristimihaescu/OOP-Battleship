@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import src.board.Board;
 import src.board.Square;
-import src.board.Square;
+
 
 public class Input {
     private final String alphabetString = "abcdefghijklmnopqrstuvwxyz".toUpperCase();
