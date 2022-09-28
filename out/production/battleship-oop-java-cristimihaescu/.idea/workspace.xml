@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="176aed82-9462-4f08-b3d0-5fa8015c2b57" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/battleship/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/battleship/board/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/battleship/board/BoardFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/battleship/board/Square.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/battleship/board/SquareStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/battleship/player/ComputerPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/battleship/player/HumanPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/battleship/player/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/battleship/ship/Ship.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/battleship/ship/ShipType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/battleship/Battleship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/battleship/Battleship.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/Board.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/BoardFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/Player1Board.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/Player2Board.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/Square.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/board/SquareStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Orientation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Player.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ship/Ship.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ship/ShipType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/battleship/util/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/battleship/util/Input.java" afterDir="false" />
-    </list>
+    <list default="true" id="176aed82-9462-4f08-b3d0-5fa8015c2b57" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,7 +80,7 @@
       <workItem from="1664345230309" duration="15733000" />
       <workItem from="1664373453852" duration="4514000" />
       <workItem from="1664384785525" duration="203000" />
-      <workItem from="1664385015451" duration="910000" />
+      <workItem from="1664385015451" duration="1293000" />
     </task>
     <servers />
   </component>
