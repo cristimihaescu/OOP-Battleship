@@ -5,7 +5,6 @@ import src.game.Player;
 import src.ship.Ship;
 import src.ship.ShipType;
 import src.util.Display;
-
 import java.util.List;
 import java.util.Arrays;
 
@@ -15,27 +14,29 @@ public class BoardFactory {
 
     public void manualPlacement(Board board, Player activePlayer, List<Ship> fleet, Game game) {
         display.clearConsole();
-        for (ShipType type : Arrays.asList(ShipType.CARRIER,
+        for (ShipType type : Arrays.asList(
+                ShipType.CARRIER,
                 ShipType.CRUISER,
                 ShipType.BATTLESHIP,
                 ShipType.SUBMARINE,
-                ShipType.DESTROYER)) {
+                ShipType.DESTROYER
+        )) {
             display.printPlacementPhaseHeader(activePlayer);
             display.printBoard(board, activePlayer);
-            if (placeShip(board, fleet, new Ship(game.placeShip(type, board), type))) {
-                continue;
-            } else {
-                placeShip(board, fleet, new Ship(game.placeShip(type, board), type));
+            boolean isPlaced = false;
+            while (!isPlaced) {
+                if (placeShip (board, fleet, new Ship(game.placeShip(type, board), type)))
+                    isPlaced = true;
             }
             display.clearConsole();
         }
     }
 
     private boolean placeShip(Board board, List<Ship> fleet, Ship ship) {
-        fleet.add(ship);
         if (!board.isPlacementOkay(ship, board)) {
             return false;
-        };
+        }
+        fleet.add(ship);
         boardPlacement(ship, board);
         return true;
     }
@@ -48,7 +49,22 @@ public class BoardFactory {
             }
         }
 
-    public void randomPlacement() {
+    public void randomPlacement(Board board, Player activePlayer, List<Ship> fleet, Game game) {
+        display.clearConsole();
+        for (ShipType type : Arrays.asList(
+                ShipType.CARRIER,
+                ShipType.CRUISER,
+                ShipType.BATTLESHIP,
+                ShipType.SUBMARINE,
+                ShipType.DESTROYER
+        )) {
+            display.printPlacementPhaseHeader(activePlayer);
+            display.printBoard(board, activePlayer);
+            while (!placeShip(board, fleet, new Ship(game.randomPlaceShip(type, board), type))) {
+                placeShip(board, fleet, new Ship(game.randomPlaceShip(type, board), type));
+            }
+            display.clearConsole();
+        }
     }
 }
 
