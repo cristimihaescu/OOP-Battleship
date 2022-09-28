@@ -1,5 +1,4 @@
 package src.battleship;
-import java.util.ArrayList;
 import src.battleship.util.Display;
 import src.battleship.util.Input;
 
