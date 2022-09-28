@@ -1,75 +1,25 @@
 package src.battleship;
 
-import src.game.Game;
-import src.util.Display;
-import src.util.Input;
-
-import java.util.InputMismatchException;
+import src.battleship.util.Display;
+import src.battleship.util.Input;
 
 public class Battleship {
     public static void main(String[] args) {
-        mainMenu(1);
-    }
-
-    private static void mainMenu(int mode) {
-        Display display = new Display();
         Input input = new Input();
-        Game game = new Game();
-        display.clearConsole();
-        deliverErrorMessages(display, mode);
-        display.printMenu();
-        try {
-            int menuInput = input.inputForMenu();
-            evaluateInput(display, input, game, menuInput);
-        } catch (InputMismatchException error) {
-            mainMenu(3);
+        Display display = new Display();
+        boolean quit = false;
+        while (!quit) {
+            display.printMainMenu();
+            String choice = input.askUserInput();
+            startMenuOption(choice);
         }
     }
 
-    private static void evaluateInput(Display display,
-                                      Input input,
-                                      Game game,
-                                      int menuInput) {
-        switch (menuInput) {
-            case 1:
-                loadGame(display, input, game, "Please choose a board size !");
-                break;
-            case 2:
-                display.clearConsole();
-                display.printGoodByeMessage();
-                System.exit(0);
-            default:
-                mainMenu(3);
+    private static void startMenuOption(String choice) {
+        if (choice.equals("3")) {
+            System.exit(0);
         }
-    }
-
-    private static void deliverErrorMessages(Display display, int mode) {
-        switch (mode) {
-            case 2:
-                display.deliverSizeErrorMessage();
-                break;
-            case 3:
-                display.deliverInvalidOptionErrorMessage();
-                break;
-        }
-    }
-
-    private static void loadGame(Display display, Input input, Game game, String Message) {
-        display.clearConsole();
-        display.printMessage(Message);
-        try {
-            int chosenSize = input.inputForMenu();
-            while (chosenSize < 10 || chosenSize > 20) {
-                display.clearConsole();
-                display.deliverSizeErrorMessage();
-                chosenSize = input.inputForMenu();
-            }
-            game.gameLoop(chosenSize);
-        } catch (InputMismatchException error) {
-            display.clearConsole();
-            display.deliverSizeErrorMessage();
-            loadGame(display, input, game, "Wrong input!");
-        }
+        Game game = new Game(choice);
+        game.gameCycle();
     }
 }
-
