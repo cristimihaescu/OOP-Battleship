@@ -1,39 +1,61 @@
 package src.battleship;
 
-import src.board.Player1Board;
-import src.board.Player2Board;
 import src.game.Game;
-import src.game.Player;
 import src.util.Display;
 import src.util.Input;
 
 public class Battleship {
     public static void main(String[] args) {
-        mainMenu();
+        mainMenu(1);
     }
 
+    private static void mainMenu(int mode) {
         Display display = new Display();
         Input input = new Input();
         Game game = new Game();
-
         display.clearConsole();
+        deliverErrorMessages(display, mode);
         display.printMenu();
-        int menuInput = input.inpputForMenu();
-
-        switch(menuInput){
-            case 1 ->{
-                display.askForBoardSize();
-                int chosenSize = input.inputForMenu();
-                if(chosenSize >= 10 && chosenSize <= 20)
-                    game.gameLoop(chosenSize);
-                else
-                    mainMenu();
+        int menuInput = input.inputForMenu();
+        evaluateInput(display, input, game, menuInput);
+    }
+        private static void evaluateInput (Display display,
+                                           Input input,
+                                           Game game,
+                                           int menuInput){
+            switch (menuInput) {
+                case 1:
+                    loadGame(display, input, game);
+                    break;
+                case 2:
+                    display.clearConsole();
+                    display.printGoodByeMessage();
+                    System.exit(0);
+                default:
+                    mainMenu(3);
             }
-            case 2 -> System.exit(0);
-            default -> mainMenu();
+        }
+
+    private static void deliverErrorMessages(Display display, int mode) {
+        switch (mode) {
+            case 2:
+                display.deliverSizeErrorMessage();
+                break;
+            case 3:
+                display.deliverInvalidOptionErrorMessage();
+                break;
+        }
     }
 
-    public void gameLoop(){
-
+        private static void loadGame (Display display, Input input, Game game){
+            display.clearConsole();
+            display.askForBoardSize();
+            int chosenSize = input.inputForMenu();
+            if (chosenSize >= 10 && chosenSize <= 20)
+                game.gameLoop(chosenSize);
+            else
+                mainMenu(2);
+        }
     }
 }
+

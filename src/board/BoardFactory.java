@@ -13,25 +13,32 @@ import java.util.Arrays;
 public class BoardFactory {
     Display display = new Display();
 
-    public void manualPlacement(Board board, Player player, List<Ship> fleet, Game game) {
-        fleet.add(new Ship(game.placeShip(ShipType.CARRIER,board) , ShipType.CARRIER));
-        boardPlacement(fleet,board);
-        fleet.add(new Ship(game.placeShip(ShipType.CRUISER,board) , ShipType.CRUISER));
-        fleet.add(new Ship(game.placeShip(ShipType.BATTLESHIP, board) , ShipType.BATTLESHIP));
-        fleet.add(new Ship(game.placeShip(ShipType.SUBMARINE, board) , ShipType.SUBMARINE));
-        fleet.add(new Ship(game.placeShip(ShipType.DESTROYER, board) , ShipType.DESTROYER));
-        boardPlacement(fleet,board);
+    public void manualPlacement(Board board, Player activePlayer, List<Ship> fleet, Game game) {
+        display.clearConsole();
+        for (ShipType type : Arrays.asList(ShipType.CARRIER,
+                ShipType.CRUISER,
+                ShipType.BATTLESHIP,
+                ShipType.SUBMARINE,
+                ShipType.DESTROYER)) {
+            display.printPlacementPhaseHeader(activePlayer);
+            display.printBoard(board, activePlayer);
+            placeShip(board, fleet, new Ship(game.placeShip(type, board) , type));
+            display.clearConsole();
+        }
+    }
+
+    private void placeShip(Board board, List<Ship> fleet, Ship ship) {
+        fleet.add(ship);
+        boardPlacement(ship, board);
     }
 
 
-    public void boardPlacement(List<Ship> fleet, Board board) {
+    public void boardPlacement(Ship ship, Board board) {
         Square[][] table = board.getBoard();
-        for (Ship ship : fleet){
-            for(Square coordinate : ship.getPlacement()){
+        for(Square coordinate : ship.getPlacement()){
                 table[coordinate.getX()][coordinate.getY()].setSquareStatus(SquareStatus.SHIP);
             }
         }
-    }
 
     public void randomPlacement() {
     }

@@ -4,7 +4,7 @@ import java.util.Scanner;
 import src.board.SquareStatus;
 import src.board.Board;
 import src.board.Square;
-import java.util.Arrays;
+
 
 
 public class Input {
@@ -17,27 +17,25 @@ public class Input {
 
     public String inputCoordinate(){
         Scanner input = new Scanner(System.in);
-        return input.nextLine();
+        return input.nextLine().toUpperCase();
     }
 
-    private boolean inputValidation(Board board, String stringCoordinate){
-        if(validateCoordinateInput(board, stringCoordinate, 0) ||
-                validateCoordinateInput(board, stringCoordinate, 1) ||
-                validateCoordinateStatus(board, stringCoordinate)){
-            return false;
-        }else{
-            return true;
-        }
+    public boolean inputValidation(Board board, String stringCoordinate){
+        return validateCoordinateInput(board, stringCoordinate, 0) &&
+                validateCoordinateInput(board, stringCoordinate, 1) &&
+                validateCoordinateStatus(board, stringCoordinate);
     }
 
     private boolean validateCoordinateInput(Board board, String stringCoordinate, int rowOrColumnDetector){
-        return toCoordinates(stringCoordinate)[rowOrColumnDetector] > board.getSize();
+        return toCoordinates(stringCoordinate)[rowOrColumnDetector] <= board.getSize();
     }
 
     private boolean validateCoordinateStatus(Board board, String stringCoordinate){
         int[] shootCoordinate = toCoordinates(stringCoordinate);
         Square square = board.getBoard()[shootCoordinate[0]][shootCoordinate[1]];
-        return square.getSquareStatus() != SquareStatus.MISS || square.getSquareStatus() != SquareStatus.HIT;
+        return square.getSquareStatus() != SquareStatus.MISS &&
+                square.getSquareStatus() != SquareStatus.HIT &&
+                square.getSquareStatus() != SquareStatus.SHIP;
     }
 
     public String toString(int[] intArrayCoordinate) {
@@ -52,15 +50,14 @@ public class Input {
     public int[] toCoordinates(String stringCoordinate) {
         int row = Integer.parseInt((stringCoordinate.substring(1)))-1;
         int columnNumber = alphabetString.indexOf(stringCoordinate.charAt(0));
-        return new int[] {row, columnNumber};
+        return new int[]{row, columnNumber};
     }
 
     public String askForName(){
         Scanner input = new Scanner(System.in);
         return input.nextLine();
     }
-
-    public String askForOrientation(){
+    public String askEnter() {
         Scanner input = new Scanner(System.in);
         return input.nextLine();
     }

@@ -6,6 +6,7 @@ import src.ship.Ship;
 import src.ship.ShipType;
 import src.board.SquareStatus;
 import src.game.Player;
+import java.util.ArrayList
 
 public class Display {
 
@@ -53,8 +54,7 @@ public class Display {
     }
 
     private String createTableHeader(int boardSize, Player activePlayer) {
-        StringBuilder tableHeader = new StringBuilder();
-        tableHeader.append("Player ").append(activePlayer.getName()).append("'s turn!\n").append("    ");
+        StringBuilder tableHeader = new StringBuilder().append("    ");
         for (int index = 0; index < boardSize; index++) {
             tableHeader.append(alphabetString.charAt(index)).append("   ");
         }
@@ -64,25 +64,49 @@ public class Display {
     public void printGameplay() {
         System.out.println("");
     }
-    public void printResults() {
-        System.out.println("");
+    public void printResults(Player activePlayer) {
+        System.out.println(activePlayer.getName() + " has won!");
     }
     public void askForName() {
         System.out.println("Enter a name: \n");
     }
 
     public void turn(Player activePlayer) {
+        System.out.println("It's " + activePlayer.getName() + "'s turn! Choose a coordinate to shoot at:\n");
     }
 
     public void askForOrientation() {
-        System.out.println("Please choose the orientation: ");
+        System.out.println("Please choose the orientation (North(N), South(S), East(E) or West(W)): ");
     }
 
+    public void wrongCoordinates(){
+        System.out.println("Wrong coordinates !");
+    }
     public void clearConsole() {
         System.out.flush();
     }
 
     public void askForBoardSize() {
         System.out.println("Please choose a board size !");
+    }
+
+    public void askForEnter(){
+        System.out.println("Please press enter !");
+    }
+
+    public void deliverSizeErrorMessage() {
+        System.out.println("Invalid size!");
+    }
+
+    public void deliverInvalidOptionErrorMessage() {
+        System.out.println("There is no such option !");
+    }
+
+    public void printGoodByeMessage() {
+        System.out.println("See-Ya !");
+    }
+
+    public void printPlacementPhaseHeader(Player activePlayer) {
+        System.out.println(activePlayer.getName() + "'s deployment phase:\n");
     }
 }

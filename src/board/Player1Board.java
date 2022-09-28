@@ -1,8 +1,7 @@
 package src.board;
-import java.util.Arrays;
 
 public class Player1Board extends Board{
-    private Square[][] ocean;
+    private final Square[][] ocean;
 
     public Player1Board(int size){
         super(size);
@@ -13,7 +12,6 @@ public class Player1Board extends Board{
             }
         }
     }
-
 
     @Override
     public Square[][] getBoard() {
