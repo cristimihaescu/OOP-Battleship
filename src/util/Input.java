@@ -1,9 +1,10 @@
 package src.util;
 
 import java.util.Scanner;
-
+import src.board.SquareStatus;
 import src.board.Board;
 import src.board.Square;
+import java.util.Arrays;
 
 
 public class Input {
@@ -35,11 +36,10 @@ public class Input {
 
     private boolean validateCoordinateStatus(Board board, String stringCoordinate){
         int[] shootCoordinate = toCoordinates(stringCoordinate);
-        Square square = board.getSquare()[shootCoordinate[0]][shootCoordinate[1]];
-        return square.getStatus() != "MISS" || square.getStatus() != "HIT";
+        Square square = board.getBoard()[shootCoordinate[0]][shootCoordinate[1]];
+        return square.getSquareStatus() != SquareStatus.MISS || square.getSquareStatus() != SquareStatus.HIT;
     }
 
-    @Override
     public String toString(int[] intArrayCoordinate) {
         String coordinate;
         int row = intArrayCoordinate[0] + 1;
@@ -56,6 +56,11 @@ public class Input {
     }
 
     public String askForName(){
+        Scanner input = new Scanner(System.in);
+        return input.nextLine();
+    }
+
+    public String askForOrientation(){
         Scanner input = new Scanner(System.in);
         return input.nextLine();
     }

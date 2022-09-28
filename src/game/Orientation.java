@@ -2,12 +2,12 @@ package src.game;
 
 public enum Orientation {
     NORTH(-1, 0),
-    WEST(0, 1),
+    WEST(0, -1),
     SOUTH(1, 0),
-    EAST(0, -1);
+    EAST(0, 1);
 
-    private int X;
-    private int Y;
+    private final int X;
+    private final int Y;
 
     Orientation(int X, int Y){
         this.X = X;
