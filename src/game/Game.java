@@ -7,9 +7,10 @@ import src.ship.Ship;
 import src.ship.ShipType;
 import src.util.Display;
 import src.util.Input;
-
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.InputMismatchException;
 
 public class Game {
     private final Display display;
@@ -30,8 +31,18 @@ public class Game {
         display.clearConsole();
         display.askForName();
         this.player2 = new Player(input.askForName(), this, player2Board);
+    }
 
         public void gameLoop () {
+            Player1Board player1Board = new Player1Board(size);
+            Player2Board player2Board = new Player2Board(size);
+            display.clearConsole();
+            display.askForName();
+            Player player1 = new Player(input.askForName(), this, player1Board);
+            display.clearConsole();
+            display.askForName();
+            Player player2 = new Player(input.askForName(), this, player2Board);
+
             int currentRound = 1;
             boolean isRunning = true;
             while (isRunning) {
@@ -51,7 +62,6 @@ public class Game {
             input.askEnter();
             Battleship.main(new String[]{});
         }
-    }
 
     private void printShipDetails(Player activePlayer) {
         for (Ship ship : activePlayer.getShips()) {
@@ -62,7 +72,7 @@ public class Game {
     }
 
     public void playRound(Player activePlayer, Player opponent, Board board) {
-        display.turn(activePlayer);
+        prepareRound(activePlayer);
         String shootArea = input.inputCoordinate();
         int[] shootCoordinates = input.toCoordinates(shootArea);
         int row = shootCoordinates[0];
@@ -73,11 +83,23 @@ public class Game {
             case EMPTY:
                 square.setSquareStatus(SquareStatus.MISS);
             case SHIP:
-                square.setSquareStatus(SquareStatus.HIT);
-                damageEnemyShip(opponent.getShips(), shootCoordinates);
-                lookForSunkShips(opponent.getShips());
-                opponent.setShipSquares();
+                hitShip(opponent, shootCoordinates);
                 break;
+        }
+    }
+
+    private void prepareRound(Player activePlayer) {
+        display.turn(activePlayer);
+    }
+
+    private void hitShip(Player opponent, int[] shootCoordinates, Square square) {
+        if (square.getSquareStatus() == SquareStatus.HIT) {
+            System.out.println("You've already hit that!");
+        } else {
+            Square.setSquareStatus(SquareStatus.HIT);
+            damageEnemyShip(opponent.getShips(), shootCoordinates);
+            lookForSunkShips(opponent.getShips());
+            opponent.setShipSquares();
         }
     }
 

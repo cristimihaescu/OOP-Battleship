@@ -24,7 +24,7 @@ public class Square {
         return squareStatus;
     }
 
-    public void setSquareStatus(SquareStatus squareStatus){
+    public static void setSquareStatus(SquareStatus squareStatus){
         this.squareStatus = squareStatus;
     }
 }

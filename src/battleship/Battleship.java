@@ -4,6 +4,8 @@ import src.game.Game;
 import src.util.Display;
 import src.util.Input;
 
+import java.util.InputMismatchException;
+
 public class Battleship {
     public static void main(String[] args) {
         mainMenu(1);
@@ -12,27 +14,34 @@ public class Battleship {
     private static void mainMenu(int mode) {
         Display display = new Display();
         Input input = new Input();
+        Game game = new Game();
         display.clearConsole();
         deliverErrorMessages(display, mode);
         display.printMenu();
-        int menuInput = input.inputForMenu();
-        evaluateInput(display, input, menuInput);
-    }
-        private static void evaluateInput (Display display,
-                                           Input input,
-                                           int menuInput){
-            switch (menuInput) {
-                case 1:
-                    loadGame(display, input);
-                    break;
-                case 2:
-                    display.clearConsole();
-                    display.printGoodByeMessage();
-                    System.exit(0);
-                default:
-                    mainMenu(3);
-            }
+        try {
+            int menuInput = input.inputForMenu();
+            evaluateInput(display, input, game, menuInput);
+        } catch (InputMismatchException error) {
+            mainMenu(3);
         }
+    }
+
+    private static void evaluateInput(Display display,
+                                      Input input,
+                                      Game game,
+                                      int menuInput) {
+        switch (menuInput) {
+            case 1:
+                loadGame(display, input, game, "Please choose a board size !");
+                break;
+            case 2:
+                display.clearConsole();
+                display.printGoodByeMessage();
+                System.exit(0);
+            default:
+                mainMenu(3);
+        }
+    }
 
     private static void deliverErrorMessages(Display display, int mode) {
         switch (mode) {
@@ -45,16 +54,22 @@ public class Battleship {
         }
     }
 
-        private static void loadGame (Display display, Input input) {
-            display.clearConsole();
-            display.askForBoardSize();
+    private static void loadGame(Display display, Input input, Game game, String Message) {
+        display.clearConsole();
+        display.printMessage(Message);
+        try {
             int chosenSize = input.inputForMenu();
-            if (chosenSize >= 10 && chosenSize <= 20)
-                Game game = new Game(chosenSize);
-            game.gameLoop();
+            while (chosenSize < 10 || chosenSize > 20) {
+                display.clearConsole();
+                display.deliverSizeErrorMessage();
+                chosenSize = input.inputForMenu();
+            }
+            game.gameLoop(chosenSize);
+        } catch (InputMismatchException error) {
+            display.clearConsole();
+            display.deliverSizeErrorMessage();
+            loadGame(display, input, game, "Wrong input!");
         }
-            else
-                mainMenu(2);
-        }
-
+    }
+}
 
