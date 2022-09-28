@@ -7,41 +7,50 @@ import src.ship.Ship;
 import src.ship.ShipType;
 import src.util.Display;
 import src.util.Input;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
-    private final Display display = new Display();
-    private final Input input = new Input();
+    private final Display display;
+    private final Input input;
+    private final Player1Board player1Board;
+    private final Player2Board player2Board;
+    private final Player player1;
+    private final Player player2;
 
-    public void gameLoop(int size) {
-        Player1Board player1Board = new Player1Board(size);
-        Player2Board player2Board = new Player2Board(size);
+    public Game(int size) {
+        this.display = new Display();
+        this.input = new Input();
+        this.player1Board = new Player1Board(size);
+        this.player2Board = new Player2Board(size);
         display.clearConsole();
         display.askForName();
-        Player player1 = new Player(input.askForName(), this, player1Board);
+        this.player1 = new Player(input.askForName(), this, player1Board);
         display.clearConsole();
         display.askForName();
-        Player player2 = new Player(input.askForName(), this, player2Board);
+        this.player2 = new Player(input.askForName(), this, player2Board);
 
-        int currentRound = 1;
-        boolean isRunning = true;
-        while (isRunning) {
-            Player activePlayer = currentRound % 2 == 0 ? player2 : player1;
-            Player opponent = activePlayer == player1 ? player2 : player1;
-            Board activeBoard = activePlayer == player1 ? player2Board : player1Board;
-            printShipDetails(activePlayer);
-            playRound(activePlayer, opponent, activeBoard);
-            if (hasWon(opponent) && !opponent.isAlive()) {
-                display.clearConsole();
-                display.printResults(activePlayer);
-                isRunning = false;
+        public void gameLoop () {
+            int currentRound = 1;
+            boolean isRunning = true;
+            while (isRunning) {
+                Player activePlayer = currentRound % 2 == 0 ? player2 : player1;
+                Player opponent = activePlayer == player1 ? player2 : player1;
+                Board activeBoard = activePlayer == player1 ? player2Board : player1Board;
+                printShipDetails(activePlayer);
+                playRound(activePlayer, opponent, activeBoard);
+                if (hasWon(opponent) && !opponent.isAlive()) {
+                    display.clearConsole();
+                    display.printResults(activePlayer);
+                    isRunning = false;
+                }
+                currentRound++;
             }
-            currentRound++;
+            display.askForEnter();
+            input.askEnter();
+            Battleship.main(new String[]{});
         }
-        display.askForEnter();
-        input.askEnter();
-        Battleship.main(new String[]{});
     }
 
     private void printShipDetails(Player activePlayer) {
@@ -65,7 +74,34 @@ public class Game {
                 square.setSquareStatus(SquareStatus.MISS);
             case SHIP:
                 square.setSquareStatus(SquareStatus.HIT);
+                damageEnemyShip(opponent.getShips(), shootCoordinates);
+                lookForSunkShips(opponent.getShips());
                 opponent.setShipSquares();
+                break;
+        }
+    }
+
+    private void lookForSunkShips(List<Ship> enemyShips) {
+        for (Ship ship : enemyShips) {
+            int damagedTiles = 0;
+            for (Square tile : ship.getPlacement()) {
+                if (tile.getSquareStatus() == SquareStatus.HIT)
+                    damagedTiles++;
+            }
+            if (damagedTiles == ship.getPlacement().size()) {
+                display.deliverSunkMessage(ship.getType().getName());
+            }
+        }
+    }
+
+    private void damageEnemyShip(List<Ship> enemyShips, int[] shootCoordinates) {
+        for (Ship ship : enemyShips) {
+            for (Square coordinate : ship.getPlacement()) {
+                if (coordinate.getX() == shootCoordinates[0] &&
+                        coordinate.getY() == shootCoordinates[1]) {
+                    coordinate.setSquareStatus(SquareStatus.HIT);
+                }
+            }
         }
     }
 
@@ -80,16 +116,16 @@ public class Game {
         if (type != ShipType.DESTROYER) {
             return getOrientation(type, board, positionList, shipNosePosition);
         }
-    Orientation shipOriented = Orientation.EAST;
-    positionList.add(new Square(shipNosePosition[0], shipNosePosition[1], SquareStatus.SHIP));
-    fillUpPositionList(type, positionList, shipNosePosition, shipOriented);
-    return positionList;
-}
+        positionList.add(new Square(shipNosePosition[0], shipNosePosition[1], SquareStatus.SHIP));
+        return positionList;
+    }
 
-    private List<Square> getOrientation(ShipType type,
-                                        Board board,
-                                        List<Square> positionList,
-                                        int[] shipNosePosition) {
+    private List<Square> getOrientation(
+            ShipType type,
+            Board board,
+            List<Square> positionList,
+            int[] shipNosePosition
+    ) {
         ArrayList<String> validOrientations = validOrientations(shipNosePosition, type, board);
         Orientation shipOriented = getShipOrientation(type, board, validOrientations);
         while (!validOrientations.contains(shipOriented.getName())) {
@@ -108,19 +144,19 @@ public class Game {
         return shipNosePosition;
     }
 
-    private ArrayList<String> validOrientations(int [] shipNosePosition, ShipType type, Board board){
+    private ArrayList<String> validOrientations(int[] shipNosePosition, ShipType type, Board board) {
         ArrayList<String> validDirection = new ArrayList<>();
 
-        if (shipNosePosition[0] - type.getSize() >= 0){
+        if (shipNosePosition[0] - type.getSize() >= 0) {
             validDirection.add("N");
         }
-        if (shipNosePosition[1] - type.getSize() >= 0){
+        if (shipNosePosition[1] - type.getSize() >= 0) {
             validDirection.add("W");
         }
-        if (shipNosePosition[0] + type.getSize() <= board.getSize()){
+        if (shipNosePosition[0] + type.getSize() <= board.getSize()) {
             validDirection.add("S");
         }
-        if (shipNosePosition[0] + type.getSize() <= board.getSize()){
+        if (shipNosePosition[1] + type.getSize() <= board.getSize()) {
             validDirection.add("E");
         }
         return validDirection;
@@ -135,8 +171,8 @@ public class Game {
         int multiplierForShip = 1;
         for (int addition = 0; addition < type.getSize() - 1; addition++) {
             positionList.add(new Square(shipNosePosition[0] + shipOriented.getX() * multiplierForShip,
-            shipNosePosition[1] + shipOriented.getY() * multiplierForShip,
-            SquareStatus.SHIP));
+                    shipNosePosition[1] + shipOriented.getY() * multiplierForShip,
+                    SquareStatus.SHIP));
             multiplierForShip++;
         }
     }
@@ -163,6 +199,8 @@ public class Game {
                 output = Orientation.SOUTH;
             case "E":
                 output = Orientation.EAST;
+            default:
+                placeShip(type, board);
         }
         return output;
     }

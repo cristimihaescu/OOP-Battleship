@@ -75,8 +75,11 @@ public class Display {
         System.out.println("It's " + activePlayer.getName() + "'s turn! Choose a coordinate to shoot at:\n");
     }
 
-    public void askForOrientation() {
-        System.out.println("Please choose the orientation (North(N), South(S), East(E) or West(W)): ");
+    public void askForOrientation(ArrayList<String> validOrientations) {
+        StringBuilder output = new StringBuilder().append("Please choose the orientation (North(N), South(S), East(E) or West(W)):");
+        for (String validOption : validOrientations)
+            output.append(validOption).append(", ");
+        System.out.println(output.substring(0, output.length() - 2) + ")");
     }
 
     public void wrongCoordinates(){
@@ -108,5 +111,9 @@ public class Display {
 
     public void printPlacementPhaseHeader(Player activePlayer) {
         System.out.println(activePlayer.getName() + "'s deployment phase:\n");
+    }
+
+    public void deliverSunkMessage(String name) {
+        System.out.println("You destroyed the enemy " + name + "!");
     }
 }

@@ -6,10 +6,6 @@ public class Square {
     private SquareStatus squareStatus;
 
 
-    public SquareStatus showSquareStatus(){
-        return null;
-    }
-
     public Square(int x, int y, SquareStatus squareStatus){
         X = x;
         Y = y;
