@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="176aed82-9462-4f08-b3d0-5fa8015c2b57" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2FIHKTGcfgXRCqGnPQNjjyg35nx" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Codecool/OOP/battleship-oop-java-cristimihaescu&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="Battleship" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.battleship.Battleship" />
+      <module name="battleship-oop-java-cristimihaescu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.battleship.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Battleship" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="176aed82-9462-4f08-b3d0-5fa8015c2b57" name="Changes" comment="" />
+      <created>1664172613532</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1664172613532</updated>
+      <workItem from="1664172615129" duration="667000" />
+      <workItem from="1664174033635" duration="10957000" />
+      <workItem from="1664199890057" duration="37000" />
+      <workItem from="1664200107653" duration="30000" />
+      <workItem from="1664200361559" duration="68000" />
+      <workItem from="1664201740249" duration="46000" />
+      <workItem from="1664202327879" duration="366000" />
+      <workItem from="1664205066863" duration="32000" />
+      <workItem from="1664205154328" duration="59000" />
+      <workItem from="1664205243187" duration="49000" />
+      <workItem from="1664213213508" duration="351000" />
+      <workItem from="1664258459171" duration="9722000" />
+      <workItem from="1664288035820" duration="5147000" />
+      <workItem from="1664345230309" duration="15733000" />
+      <workItem from="1664373453852" duration="4514000" />
+      <workItem from="1664384785525" duration="203000" />
+      <workItem from="1664385015451" duration="1293000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
