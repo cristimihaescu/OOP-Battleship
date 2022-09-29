@@ -30,6 +30,12 @@ public class Board {
                 : SquareStatus.MISSED);
     }
 
+    public void setSquareStatusSunk(int x, int y){
+        ocean[x][y].setStatus(ocean[x][y].getStatus() == SquareStatus.HIT
+                ?SquareStatus.HIT
+                :SquareStatus.MISSED);
+    }
+
     private boolean isPlacementInsideBoard(int x, int y, int size, String direction) {
         int xEnd = direction.equals("vertical")
                 ? x + size

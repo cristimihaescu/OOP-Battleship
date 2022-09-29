@@ -1,5 +1,4 @@
 package src.battleship.util;
-
 import src.battleship.board.Board;
 import src.battleship.board.SquareStatus;
 
@@ -15,9 +14,24 @@ public class Display {
     }
 
     public void printMainMenu() {
-        println("[1]Start new game\n" +
-                "[2]Start new game vs AI\n" +
-                "[3]Exit");
+        println("                                     # #  ( )\n" +
+                        "                                  ___#_#___|__\n" +
+                        "                              _  |____________|  _\n" +
+                        "                       _=====| | |            | | |==== _\n" +
+                        "                 =====| |.---------------------------. | |====\n" +
+                        "   <--------------------'   .  .  .  .  .  .  .  .   '--------------/\n" +
+                        "     \\                           BATTLESHIP                        /\n" +
+                        "      \\___________________________________________________________/\n" +
+                        "  wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\n" +
+                        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\n" +
+                        "   wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww \n"+"\n"+
+
+                "Welcome to the battleship game !\n"+"\n"+
+                "Please choose an option:\n"+"\n"+
+
+                "1.Player vs Player \n" +
+                "2.Player vs Computer\n" +
+                "3.Quit");
     }
 
     public void printBoard(Board board, boolean isPlacementPhase) {
@@ -27,7 +41,7 @@ public class Display {
         int boardSize = board.getOcean().length;
         print("   ");
         for (int i = 1; i <= boardSize; i++) {
-            print(i + "  ");
+            print(i + "   ");
         }
         println("");
         for (int i = 0; i < boardSize; i++) {
@@ -47,6 +61,6 @@ public class Display {
     }
 
     public void printWinner(String player) {
-        println(player + " has won the game!");
+        println(player + " You won !");
     }
 }

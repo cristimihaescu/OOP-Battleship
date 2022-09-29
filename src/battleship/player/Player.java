@@ -49,5 +49,9 @@ public abstract class Player {
         this.board.setSquareStatusHit(x, y);
     }
 
+    public void getSunk(int x, int y){
+        this.board.setSquareStatusSunk(x, y);
+    }
+
     public abstract void shoot(Player player);
 }

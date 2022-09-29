@@ -56,7 +56,7 @@ public class BoardFactory {
 
 
     private String getPlacementDirection() {
-        String direction = input.askUserInput("Placement direction:\n[h] - horizontal\n[v] - vertical");
+        String direction = input.askUserInput("Choose a direction:\n[h] - horizontal\n[v] - vertical");
         if (direction.equals("h")) {
             return "horizontal";
         } else if (direction.equals("v")) {

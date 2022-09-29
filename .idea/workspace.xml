@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="176aed82-9462-4f08-b3d0-5fa8015c2b57" name="Changes" comment="" />
+    <list default="true" id="176aed82-9462-4f08-b3d0-5fa8015c2b57" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/battleship-oop-java-cristimihaescu/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/battleship-oop-java-cristimihaescu/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/battleship-oop-java-cristimihaescu/src/battleship/Battleship.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/battleship-oop-java-cristimihaescu/src/battleship/Battleship.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/battleship/board/BoardFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/battleship/board/BoardFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/battleship/board/SquareStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/battleship/board/SquareStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/battleship/ship/ShipType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/battleship/ship/ShipType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/battleship/util/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/battleship/util/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/battleship/util/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/battleship/util/Input.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,19 +59,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="battleship-oop-java-cristimihaescu" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="battleship-oop-java-cristimihaescu" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Battleship" />
@@ -94,6 +90,8 @@
       <workItem from="1664373453852" duration="4514000" />
       <workItem from="1664384785525" duration="203000" />
       <workItem from="1664385015451" duration="1293000" />
+      <workItem from="1664387347404" duration="105000" />
+      <workItem from="1664431305173" duration="3875000" />
     </task>
     <servers />
   </component>

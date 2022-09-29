@@ -12,7 +12,7 @@ public class Input {
 
     public String askPlacementCoordinate(ShipType shipType) {
         while (true) {
-            display.println("Where do you want to place the " + shipType + " ship?");
+            display.println("Choose where to place the " + shipType + "!");
             String userInput = inputScan.nextLine();
             if (isValidCoordinateForm(userInput)) {
                 return userInput;
@@ -29,14 +29,14 @@ public class Input {
     }
 
     public int[] askAttackCoordinate(String player, Board attackedBoard) {
-        display.println("Player " + player + ", input an attack coordinate!");
+        display.println(player + ", choose a coordinate to attack!");
         String userInput = inputScan.nextLine();
         while (!isValidCoordinateForm(userInput) || !isInsideBoard(userInput, attackedBoard)) {
             if (userInput.equalsIgnoreCase("NUKE")) {
                 return new int[]{00000000};
             }
-            display.print(!isValidCoordinateForm(userInput) ? "Invalid coordinate. " : "Coordinate out of bound. ");
-            display.println("Please try again!");
+            display.print(!isValidCoordinateForm(userInput) ? "Invalid coordinate. " : "Coordinate out of board ! ");
+            display.println("Try again!");
             userInput = inputScan.nextLine();
         }
         return convertStringToMove(userInput);
