@@ -1,11 +1,14 @@
 package src.battleship.player;
 
+import src.battleship.board.Square;
+import src.battleship.board.SquareStatus;
+import src.battleship.ship.Ship;
 import src.battleship.util.Display;
 import src.battleship.util.Input;
-
 import java.util.Arrays;
 
 public class HumanPlayer extends Player {
+    private Square status;
     private static final Display display = new Display();
     private static final Input input = new Input();
 
@@ -21,6 +24,13 @@ public class HumanPlayer extends Player {
             initiateNukeCheat(otherPlayer);
         } else {
             otherPlayer.getHit(validCoordinates[0], validCoordinates[1]);
+            for (Ship playerShip : playerShips) {
+                if (playerShip.getPositions().stream().noneMatch(ship -> ship.getStatus().equals(SquareStatus.SHIP))) {
+                    playerShip.getPositions().forEach(ship -> ship.setStatus(SquareStatus.SUNK));
+
+
+                }
+            }
         }
     }
 
