@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="176aed82-9462-4f08-b3d0-5fa8015c2b57" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/battleship-oop-java-cristimihaescu/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/battleship-oop-java-cristimihaescu/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/battleship-oop-java-cristimihaescu/src/battleship/player/HumanPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/battleship-oop-java-cristimihaescu/src/battleship/player/HumanPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/battleship/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/battleship/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/battleship/board/SquareStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/battleship/board/SquareStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/battleship/player/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/battleship/player/HumanPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,16 +33,17 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Codecool/OOP/battleship-oop-java-cristimihaescu&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "18",
+    "last_opened_file_path": "D:/Codecool/OOP/planning-motors-general-cristimihaescu",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Battleship" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.battleship.Battleship" />
@@ -84,6 +90,10 @@
       <workItem from="1664384785525" duration="203000" />
       <workItem from="1664385015451" duration="1293000" />
       <workItem from="1664387347404" duration="105000" />
+      <workItem from="1664431305173" duration="16917000" />
+      <workItem from="1664460302306" duration="222000" />
+      <workItem from="1664518074703" duration="4206000" />
+      <workItem from="1664872844337" duration="466000" />
     </task>
     <servers />
   </component>
@@ -100,5 +110,18 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="src.battleship.player.HumanPlayer" memberName="board" />
+        <PinnedItemInfo parentTag="src.battleship.ship.ShipType" memberName="name" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((Ship)((ArrayList)((HumanPlayer)this).playerShips).get(0)).shipPositions" custom="src.battleship.ship.Ship,src.battleship.player.HumanPlayer,java.util.ArrayList" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="176aed82-9462-4f08-b3d0-5fa8015c2b57" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/battleship/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/battleship/board/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/battleship-oop-java-cristimihaescu/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/battleship-oop-java-cristimihaescu/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/battleship-oop-java-cristimihaescu/src/battleship/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/battleship-oop-java-cristimihaescu/src/battleship/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/battleship-oop-java-cristimihaescu/src/battleship/board/SquareStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/battleship-oop-java-cristimihaescu/src/battleship/board/SquareStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/battleship-oop-java-cristimihaescu/src/battleship/player/HumanPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/battleship-oop-java-cristimihaescu/src/battleship/player/HumanPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/battleship/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/battleship/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/battleship/board/SquareStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/battleship/board/SquareStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/battleship/player/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/battleship/player/HumanPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,8 +41,9 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Codecool/OOP/battleship-oop-java-cristimihaescu&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+    &quot;last_opened_file_path&quot;: &quot;D:/Codecool/OOP/dungeon-crawl-1-java-dinuie&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RunManager">
@@ -86,7 +92,12 @@
       <workItem from="1664384785525" duration="203000" />
       <workItem from="1664385015451" duration="1293000" />
       <workItem from="1664387347404" duration="105000" />
-      <workItem from="1664431305173" duration="16610000" />
+      <workItem from="1664431305173" duration="16917000" />
+      <workItem from="1664460302306" duration="222000" />
+      <workItem from="1664518074703" duration="4206000" />
+      <workItem from="1664872844337" duration="466000" />
+      <workItem from="1666684862909" duration="29000" />
+      <workItem from="1666691578434" duration="10000" />
     </task>
     <servers />
   </component>
@@ -105,45 +116,6 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/battleship/Game.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/battleship/Game.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/battleship/player/Player.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/battleship/player/ComputerPlayer.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/battleship/player/HumanPlayer.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/battleship/player/Player.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/battleship/board/Board.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="src.battleship.player.HumanPlayer" memberName="board" />

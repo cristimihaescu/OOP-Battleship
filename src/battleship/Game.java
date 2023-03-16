@@ -31,19 +31,12 @@ public class Game {
     }
 
     private void changeCurrentPlayer() {
-        if (currentRoundPlayer.getName().equals(player1.getName())) {
-            currentRoundPlayer = player2;
-        } else {
-            currentRoundPlayer = player1;
-        }
+        currentRoundPlayer = currentRoundPlayer.getName().equals(player1.getName()) ? player2 : player1;
     }
 
     private Player getOtherPlayer() {
-        if (currentRoundPlayer.getName().equals(player1.getName())) {
-            return player2;
-        } else {
-            return player1;
-        }
+        return currentRoundPlayer.getName().equals(player1.getName()) ? player2 : player1;
+
     }
 
     private boolean checkWin() {

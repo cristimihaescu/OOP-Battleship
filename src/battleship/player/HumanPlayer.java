@@ -1,5 +1,4 @@
 package src.battleship.player;
-
 import src.battleship.board.Square;
 import src.battleship.board.SquareStatus;
 import src.battleship.ship.Ship;
@@ -27,8 +26,6 @@ public class HumanPlayer extends Player {
             for (Ship playerShip : playerShips) {
                 if (playerShip.getPositions().stream().noneMatch(ship -> ship.getStatus().equals(SquareStatus.SHIP))) {
                     playerShip.getPositions().forEach(ship -> ship.setStatus(SquareStatus.SUNK));
-
-
                 }
             }
         }
