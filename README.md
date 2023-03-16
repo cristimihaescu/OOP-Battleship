@@ -25,13 +25,3 @@ The OOP Java Battleship Game is an engaging and interactive way to play the clas
     The Square class has a SquareStatus field.
     The Square class has method that returns a graphical representation of SquareStatus. 
 
-Implement the SquareStatus enum.
-
-    The SquareStatus enum represents possible square statuses (empty, ship, hit, missed).
-    Each SquareStatus has a unicode character that can be used for printing it out. This unicode character is returned by a SquareStatus.GetCharacter() method. 
-
-Hints
-
-    There is no skeleton code for this project (on purpose), just an empty file. Try to create it from scratch.
-    Focus on features first, and refactor at the end.
-
