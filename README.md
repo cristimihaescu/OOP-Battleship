@@ -25,3 +25,6 @@ The OOP Java Battleship Game is an engaging and interactive way to play the clas
     The Square class has a SquareStatus field.
     The Square class has method that returns a graphical representation of SquareStatus. 
 
+![Battleship 1](https://user-images.githubusercontent.com/100032003/228142980-1adae887-a566-46ee-bcce-5dd1e567ee79.png)
+![Battleship2](https://user-images.githubusercontent.com/100032003/228142997-0b6a1d83-f58b-4af5-a7f7-e32db1b6b16b.png)
+![Battleship3](https://user-images.githubusercontent.com/100032003/228143003-3ef64bbf-baa9-4faa-8efe-2f3ed4743fb1.png)
